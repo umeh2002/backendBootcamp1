@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-interface iAuth {
+interface iTeacher {
   userName?: string;
   email?: string;
   password?: string;
@@ -8,9 +8,9 @@ interface iAuth {
   avatar?: string;
 }
 
-interface iAuthData extends iAuth, mongoose.Document {}
+interface iTeacherData extends iTeacher, mongoose.Document {}
 
-const authModel = new mongoose.Schema(
+const teacherModel = new mongoose.Schema(
   {
     userName: {
       type: String,
@@ -38,4 +38,4 @@ const authModel = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model<iAuthData>("auths", authModel);
+export default mongoose.model< iTeacherData>("teacher", teacherModel);
